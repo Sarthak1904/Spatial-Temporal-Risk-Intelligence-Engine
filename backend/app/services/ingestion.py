@@ -1,4 +1,4 @@
-"""Event ingestion service functions."""
+"""Event ingestion service. Bulk insert with transaction semantics."""
 
 import json
 
@@ -37,3 +37,4 @@ def ingest_events(db: Session, events: list[EventUploadItem]) -> int:
     )
     db.commit()
     return len(payload)
+
