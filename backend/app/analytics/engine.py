@@ -1,4 +1,4 @@
-"""Spatial-temporal analytics pipeline implementation."""
+"""Spatial-temporal analytics pipeline. Computes H3 aggregates, risk scores, anomalies."""
 
 from __future__ import annotations
 
@@ -211,3 +211,4 @@ class AnalyticsEngine:
         """Refresh precomputed reporting views used by APIs and tiles."""
         db.execute(text("REFRESH MATERIALIZED VIEW mv_daily_risk"))
         db.commit()
+
