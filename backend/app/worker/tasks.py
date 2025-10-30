@@ -11,7 +11,7 @@ analytics_engine = AnalyticsEngine()
 
 @celery_app.task(name="backend.app.worker.tasks.run_analytics_pipeline")
 def run_analytics_pipeline(start_datetime: str, end_datetime: str, resolution: int = 8) -> str:
-    """Execute full analytics pipeline for a given interval."""
+    """Execute full analytics pipeline. Retries on transient DB errors."""
     db = SessionLocal()
     try:
         analytics_engine.run_pipeline(
@@ -23,3 +23,4 @@ def run_analytics_pipeline(start_datetime: str, end_datetime: str, resolution: i
         return "completed"
     finally:
         db.close()
+
