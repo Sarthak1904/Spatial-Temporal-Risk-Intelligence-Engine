@@ -1,3 +1,4 @@
+// Loading state handled by MapLibre tile fetch
 import React, { useEffect } from "react";
 
 import { RiskMap } from "./components/RiskMap";
@@ -60,3 +61,4 @@ export default function App(): React.JSX.Element {
     </div>
   );
 }
+
