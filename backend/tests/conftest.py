@@ -1,4 +1,4 @@
-"""Integration test fixtures."""
+"""Integration test fixtures. Isolate tests via TRUNCATE."""
 
 from __future__ import annotations
 
@@ -39,3 +39,4 @@ def clean_database() -> Generator[None, None, None]:
         )
         db.commit()
     yield
+
