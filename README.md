@@ -275,3 +275,11 @@ risk-intelligence-engine/
 - SSO (OIDC/SAML), audit trail, and policy-based access control.
 - Continuous model drift detection and scoring recalibration.
 
+
+## Production Checklist
+
+- [ ] Set strong JWT_SECRET_KEY
+- [ ] Run migrations before first deploy
+- [ ] Bootstrap admin and analyst users
+- [ ] Configure rate limits for production load
+- [ ] Enable HTTPS and secure Redis
