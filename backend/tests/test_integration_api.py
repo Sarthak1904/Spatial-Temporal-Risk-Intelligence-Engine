@@ -20,7 +20,7 @@ def create_token(client: TestClient, username: str = "analyst_1", role: str = "a
             text(
                 """
                 INSERT INTO users (username, hashed_password, role)
-                VALUES (:username, :hashed_password, :role::user_role)
+                VALUES (:username, :hashed_password, CAST(:role AS user_role))
                 """
             ),
             {"username": username, "hashed_password": get_password_hash("secure-pass-123"), "role": role},

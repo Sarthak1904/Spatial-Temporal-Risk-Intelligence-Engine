@@ -54,9 +54,9 @@ def get_risk_tile(
                 FROM mv_daily_risk m
                 CROSS JOIN bounds b
                 WHERE ST_Intersects(ST_Transform(m.geom, 3857), b.geom)
-                  AND (:risk_date IS NULL OR m.time_bucket = :risk_date)
+                  AND (CAST(:risk_date AS DATE) IS NULL OR m.time_bucket = :risk_date)
                   AND (
-                      :risk_levels IS NULL
+                      CAST(:risk_levels AS text[]) IS NULL
                       OR m.risk_level::text = ANY(CAST(:risk_levels AS text[]))
                   )
             )

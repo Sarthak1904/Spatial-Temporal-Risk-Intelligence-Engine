@@ -55,9 +55,9 @@ def list_events(
                 ST_Y(geom::geometry) AS latitude,
                 attributes_json
             FROM events
-            WHERE (:event_type IS NULL OR event_type = :event_type)
-              AND (:start_datetime IS NULL OR event_timestamp >= :start_datetime)
-              AND (:end_datetime IS NULL OR event_timestamp <= :end_datetime)
+            WHERE (CAST(:event_type AS VARCHAR) IS NULL OR event_type = :event_type)
+              AND (CAST(:start_datetime AS TIMESTAMPTZ) IS NULL OR event_timestamp >= :start_datetime)
+              AND (CAST(:end_datetime AS TIMESTAMPTZ) IS NULL OR event_timestamp <= :end_datetime)
             ORDER BY event_timestamp DESC
             LIMIT :limit
             """
