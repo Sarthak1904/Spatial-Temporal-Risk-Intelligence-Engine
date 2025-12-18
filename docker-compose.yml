@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   postgres:
-    image: timescale/timescaledb-ha:pg16
+    image: ngosang/timescaledb-postgis:2.24.0-pg16-postgis3.6
     container_name: rie-postgres
     environment:
       POSTGRES_USER: rie_user

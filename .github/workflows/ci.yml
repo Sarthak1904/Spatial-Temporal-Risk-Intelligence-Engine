@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       postgres:
-        image: timescale/timescaledb:latest-pg16
+        image: ngosang/timescaledb-postgis:2.24.0-pg16-postgis3.6
         env:
           POSTGRES_USER: rie_user
           POSTGRES_PASSWORD: rie_password
