@@ -8,8 +8,8 @@ import pytest
 from fastapi.testclient import TestClient
 from sqlalchemy import text
 
-from backend.app.main import app
 from backend.app.db.session import SessionLocal
+from backend.app.main import app
 
 
 @pytest.fixture(scope="session")

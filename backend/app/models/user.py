@@ -9,7 +9,7 @@ from sqlalchemy.orm import Mapped, mapped_column
 from backend.app.db.base import Base
 
 
-class UserRole(str, enum.Enum):
+class UserRole(enum.StrEnum):
     """Role names used for route-level permissions."""
 
     admin = "admin"

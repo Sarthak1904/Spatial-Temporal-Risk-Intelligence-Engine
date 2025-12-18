@@ -1,7 +1,7 @@
 """H3 polygon registry model."""
 
 from geoalchemy2 import Geometry
-from sqlalchemy import BigInteger, Integer, String
+from sqlalchemy import Integer, String
 from sqlalchemy.orm import Mapped, mapped_column
 
 from backend.app.db.base import Base

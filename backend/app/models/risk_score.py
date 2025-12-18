@@ -3,13 +3,13 @@
 import enum
 from datetime import datetime
 
-from sqlalchemy import Date, DateTime, Enum, Float, Integer, String, UniqueConstraint, func
+from sqlalchemy import Date, Enum, Float, Integer, String, UniqueConstraint
 from sqlalchemy.orm import Mapped, mapped_column
 
 from backend.app.db.base import Base
 
 
-class RiskLevel(str, enum.Enum):
+class RiskLevel(enum.StrEnum):
     """Normalized risk classes."""
 
     low = "low"

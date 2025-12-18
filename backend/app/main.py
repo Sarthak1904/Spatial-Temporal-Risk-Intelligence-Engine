@@ -4,7 +4,6 @@ from fastapi import FastAPI
 from prometheus_fastapi_instrumentator import Instrumentator
 from slowapi.errors import RateLimitExceeded
 from slowapi.middleware import SlowAPIMiddleware
-from slowapi.util import get_remote_address
 from starlette.responses import JSONResponse
 
 from backend.app.api.v1.router import api_router
