@@ -33,6 +33,7 @@ jobs:
           --health-retries 10
 
     env:
+      PYTHONPATH: .
       DATABASE_URL: postgresql+psycopg://rie_user:rie_password@localhost:5432/rie_db
       REDIS_URL: redis://localhost:6379/0
       JWT_SECRET_KEY: ci-jwt-secret-key
